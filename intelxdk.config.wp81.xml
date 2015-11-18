@@ -7,6 +7,8 @@
 <name>Workshop</name>
 <content src="index.html"/>
 <intelxdk:plugin intelxdk:name="Camera" intelxdk:value="cordova-plugin-camera" intelxdk:version="1.2.0" intelxdk:checksum="d90b11fa"/>
+<intelxdk:plugin intelxdk:name="Geolocation" intelxdk:value="cordova-plugin-geolocation" intelxdk:version="1.0.1" intelxdk:checksum="2cb3083e"/>
+<intelxdk:plugin intelxdk:name="File" intelxdk:value="cordova-plugin-file" intelxdk:version="2.1.0" intelxdk:checksum="a32414d6"/>
 <!--creationInfo:{"src":"webapp/template-ionic-angularjs-starter/sample.zip","projectTypeName":"com.intel.xdk.projecttype.jsapp"}-->
 <preference name="debuggable" value="false"/>
 <platform name="ios">

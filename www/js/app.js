@@ -1,6 +1,6 @@
-angular.module('ionicApp', ['ionic','ngCordova'])
+angular.module('ionicApp', ['ionic', 'ngCordova'])
 
-.controller('AppCtrl', function($scope, $cordovaCamera) {
+.controller('AppCtrl', function ($scope, $cordovaCamera, $cordovaFile) {
 
     ionic.Platform.ready(function () {
         navigator.splashscreen.hide();
@@ -16,7 +16,8 @@ angular.module('ionicApp', ['ionic','ngCordova'])
             targetWidth: 300,
             targetHeight: 300,
             popoverOptions: CameraPopoverOptions,
-            saveToPhotoAlbum: false
+            saveToPhotoAlbum: false,
+            correctOrientation: true
         };
 
 
@@ -27,5 +28,36 @@ angular.module('ionicApp', ['ionic','ngCordova'])
         });
     };
 
+    $scope.valid = true;
+
+    $scope.formData = {};
+
+    $scope.onTouch = function (item, event) {
+        var name = $scope.formData.string;
+
+        if (name === "Curryking") {
+            $scope.valid = true;
+            alert("Herzlichen Glückwunsch du bist drin!");
+        } else {
+            $scope.valid = false;
+        }
+    };
+
+    $scope.focused = function () {
+       $scope.isFocus=true;
+    }
+
+    $scope.blurred = function () {
+        $scope.isFocus=false;
+    }
+
+
 
 });
+
+window.addEventListener("orientationchange", function () {
+    // Announce the new orientation number
+    if (window.orientation === 90) {
+        alert("Dreh das Ding zurrück du Eierkopp, das ist für Landscape nicht optimiert!");
+    }
+}, false);
